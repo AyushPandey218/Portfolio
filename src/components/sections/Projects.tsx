@@ -92,6 +92,24 @@ function TechList({ tech, accent }: { tech: string[]; accent: string }) {
   );
 }
 
+function MobileTechList({ tech, accent }: { tech: string[]; accent: string }) {
+  return (
+    <div
+      className="flex flex-wrap gap-1.5 max-w-full justify-start mt-3"
+      style={{ '--project-accent': accent } as React.CSSProperties}
+    >
+      {tech.map((t) => (
+        <span
+          key={t}
+          className="inline-flex items-center justify-center px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wider uppercase text-[var(--project-accent)] border border-[var(--project-accent)]/30 bg-[var(--project-accent)]/10 text-center"
+        >
+          {t}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
   const [activeProject, setActiveProject] = useState<string | null>(null);
@@ -100,6 +118,17 @@ export default function Projects() {
 
   const mouseX = useMotionValue(-999);
   const mouseY = useMotionValue(-999);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (!activeProject) return;
@@ -173,8 +202,31 @@ export default function Projects() {
                 onMouseLeave={() => setHoveredProject(null)}
                 onClick={() => setActiveProject(activeProject === project.name ? null : project.name)}
               >
-                <div className="relative rounded-xl -mx-6 px-6 py-12">
-                  <div className="flex w-full" style={activeProject === project.name ? { filter: 'blur(4px)' } : undefined}>
+                {isMobile ? (
+                  /* Mobile Card Layout */
+                  <div className="relative rounded-xl px-2 py-8">
+                    <div className="flex flex-col w-full gap-3" style={activeProject === project.name ? { filter: 'blur(4px)' } : undefined}>
+                      <div>
+                        <h3
+                          className="text-[26px] font-semibold leading-tight"
+                          style={{ color: project.accent }}
+                        >
+                          {project.name}
+                        </h3>
+                        <p className="text-[16px] mt-0.5 text-[#a1a1aa]">
+                          {project.year}
+                        </p>
+                        <p className="text-sm text-[#a1a1aa]/80 mt-2 leading-relaxed">
+                          {project.tip}
+                        </p>
+                      </div>
+                      <MobileTechList tech={project.tech} accent={project.accent} />
+                    </div>
+                  </div>
+                ) : (
+                  /* Desktop Card Layout (Exactly Original) */
+                  <div className="relative rounded-xl -mx-6 px-6 py-12">
+                    <div className="flex w-full" style={activeProject === project.name ? { filter: 'blur(4px)' } : undefined}>
                       {/* Left: name + year — slides right on hover */}
                       <motion.div
                         className="flex-1 max-w-[calc(100%-400px)]"
@@ -225,6 +277,7 @@ export default function Projects() {
                       </motion.div>
                     </div>
                   </div>
+                )}
 
                 {/* Pill dialog popover */}
                 <AnimatePresence>
@@ -263,19 +316,21 @@ export default function Projects() {
     </motion.section>
 
       {/* Glass tooltip that follows mouse — only on project hover */}
-      <motion.div
-        className="fixed z-50 pointer-events-none"
-        style={{
-          left: mouseX,
-          top: mouseY,
-          translate: '14px 10px',
-          opacity: hoveredProject && !activeProject ? 1 : 0,
-        }}
-      >
-        <div className="px-3 py-1.5 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/[0.06] shadow-lg shadow-black/20">
-          <span className="text-[10px] font-medium text-white/50 whitespace-nowrap">click for more info</span>
-        </div>
-      </motion.div>
+      {!isMobile && (
+        <motion.div
+          className="fixed z-50 pointer-events-none"
+          style={{
+            left: mouseX,
+            top: mouseY,
+            translate: '14px 10px',
+            opacity: hoveredProject && !activeProject ? 1 : 0,
+          }}
+        >
+          <div className="px-3 py-1.5 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/[0.06] shadow-lg shadow-black/20">
+            <span className="text-[10px] font-medium text-white/50 whitespace-nowrap">click for more info</span>
+          </div>
+        </motion.div>
+      )}
     </>
   );
 }
