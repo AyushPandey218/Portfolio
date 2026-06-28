@@ -21,14 +21,14 @@ const baseUrl = 'https://ayushpandey.dev';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Ayush Pandey | Full Stack Engineer',
+    default: 'Ayush Pandey | Full Stack Developer',
     template: '%s | Ayush Pandey',
   },
   description:
-    'Full Stack Engineer. Building products that matter. Specializing in Next.js, TypeScript, and distributed systems.',
+    'Full Stack Developer. Building products that matter. Specializing in Next.js, TypeScript, and distributed systems.',
   keywords: [
     'Ayush Pandey',
-    'Full Stack Engineer',
+    'Full Stack Developer',
     'Next.js Developer',
     'TypeScript',
     'Web Development',
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Ayush Pandey' }],
   creator: 'Ayush Pandey',
   openGraph: {
-    title: 'Ayush Pandey | Full Stack Engineer',
+    title: 'Ayush Pandey | Full Stack Developer',
     description:
-      'Full Stack Engineer. Building products that matter.',
+      'Full Stack Developer. Building products that matter.',
     url: baseUrl,
     siteName: 'Ayush Pandey Portfolio',
     locale: 'en_US',
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ayush Pandey | Full Stack Engineer',
+    title: 'Ayush Pandey | Full Stack Developer',
     description:
-      'Full Stack Engineer. Building products that matter.',
+      'Full Stack Developer. Building products that matter.',
   },
   robots: {
     index: true,
@@ -62,9 +62,9 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Ayush Pandey',
   url: baseUrl,
-  jobTitle: 'Full Stack Engineer',
+  jobTitle: 'Full Stack Developer',
   knowsAbout: [
-    'Full Stack Engineering',
+    'Full Stack Development',
     'Artificial Intelligence',
     'Next.js',
     'TypeScript',
