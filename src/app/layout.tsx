@@ -21,15 +21,14 @@ const baseUrl = 'https://ayushpandey.dev';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Ayush Pandey | Full Stack Engineer & AI Builder',
+    default: 'Ayush Pandey | Full Stack Engineer',
     template: '%s | Ayush Pandey',
   },
   description:
-    'Full Stack Engineer & AI Builder. Building products that matter. Specializing in Next.js, TypeScript, AI engineering, and distributed systems.',
+    'Full Stack Engineer. Building products that matter. Specializing in Next.js, TypeScript, and distributed systems.',
   keywords: [
     'Ayush Pandey',
     'Full Stack Engineer',
-    'AI Builder',
     'Next.js Developer',
     'TypeScript',
     'Web Development',
@@ -38,9 +37,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Ayush Pandey' }],
   creator: 'Ayush Pandey',
   openGraph: {
-    title: 'Ayush Pandey | Full Stack Engineer & AI Builder',
+    title: 'Ayush Pandey | Full Stack Engineer',
     description:
-      'Full Stack Engineer & AI Builder. Building products that matter.',
+      'Full Stack Engineer. Building products that matter.',
     url: baseUrl,
     siteName: 'Ayush Pandey Portfolio',
     locale: 'en_US',
@@ -48,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ayush Pandey | Full Stack Engineer & AI Builder',
+    title: 'Ayush Pandey | Full Stack Engineer',
     description:
-      'Full Stack Engineer & AI Builder. Building products that matter.',
+      'Full Stack Engineer. Building products that matter.',
   },
   robots: {
     index: true,
@@ -63,7 +62,7 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Ayush Pandey',
   url: baseUrl,
-  jobTitle: 'Full Stack Engineer & AI Builder',
+  jobTitle: 'Full Stack Engineer',
   knowsAbout: [
     'Full Stack Engineering',
     'Artificial Intelligence',
