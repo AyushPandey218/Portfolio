@@ -122,7 +122,7 @@ export default function Experience() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: easing, delay: i * 0.1 }}
               >
-                {/* Left: vertical line + logo */}
+                {/* Left: logo + vertical line */}
                 <div className="flex flex-col items-center shrink-0">
                   <div className="relative w-12 h-12 md:w-[48px] md:h-[48px] rounded-full bg-white shrink-0 overflow-hidden">
                     {entry.logoImage ? (
@@ -137,13 +137,14 @@ export default function Experience() {
                       <span className="text-sm font-semibold text-[#0a0a0a]">{entry.logo}</span>
                     )}
                   </div>
-                  {i < data.length - 1 && (
-                    <div className="w-[2px] flex-1 bg-white/[0.15] min-h-[60px]" />
-                  )}
                   {i === data.length - 1 && (
                     <div className="w-[2px] h-8 bg-gradient-to-b from-white/[0.15] to-transparent" />
                   )}
                 </div>
+
+                {i < data.length - 1 && (
+                  <div className="absolute left-[35px] top-[60px] bottom-[-44px] w-[2px] bg-white/[0.15]" />
+                )}
 
                 {/* Right: content */}
                 <motion.div
