@@ -31,7 +31,7 @@ const educationData: Entry[] = [
   {
     company: 'K.R. Mangalam University',
     role: 'Master of Computer Applications (AI & ML)',
-    period: '2026 — Present',
+    period: 'Sept 2026 — Present',
     description:
       'Pursuing specialization in Artificial Intelligence and Machine Learning, focusing on advanced neural networks, deep learning, and advanced intelligent systems.',
     logo: 'K',
