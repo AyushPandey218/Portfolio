@@ -4,6 +4,7 @@ import './globals.css';
 import IntroProvider from '@/components/providers/IntroProvider';
 import LenisProvider from '@/components/providers/LenisProvider';
 import ScrollProgress from '@/components/ui/ScrollProgress';
+import CustomCursor from '@/components/ui/CustomCursor';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -98,6 +99,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-black text-white antialiased selection:bg-accent/30 selection:text-white">
         <LenisProvider>
           <ScrollProgress />
+          <CustomCursor />
           <IntroProvider>{children}</IntroProvider>
         </LenisProvider>
       </body>
