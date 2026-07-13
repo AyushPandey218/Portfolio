@@ -30,6 +30,15 @@ const workData: Entry[] = [
 const educationData: Entry[] = [
   {
     company: 'K.R. Mangalam University',
+    role: 'Master of Computer Applications (AI & ML)',
+    period: '2026 — Present',
+    description:
+      'Pursuing specialization in Artificial Intelligence and Machine Learning, focusing on advanced neural networks, deep learning, and advanced intelligent systems.',
+    logo: 'K',
+    logoImage: '/krmu-logo.jpeg',
+  },
+  {
+    company: 'K.R. Mangalam University',
     role: 'Bachelor of Computer Applications (AI & DS)',
     period: 'Sept 2023 — May 2026 · Graduated',
     description:
@@ -84,7 +93,7 @@ export default function Experience() {
               activeTab === 'education' ? 'bg-white text-[#0a0a0a]' : 'text-[#a1a1aa] font-medium'
             }`}
           >
-            Studies
+            Education
           </button>
         </div>
 
