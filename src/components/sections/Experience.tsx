@@ -115,7 +115,7 @@ export default function Experience() {
           >
             {data.map((entry, i) => (
               <motion.div
-                key={entry.company}
+                key={`${entry.company}-${entry.role}`}
                 className="group relative flex gap-5 rounded-xl p-3 -mx-3 transition-colors duration-300 hover:bg-white/[0.06]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
