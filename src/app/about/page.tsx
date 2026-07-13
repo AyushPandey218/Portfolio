@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import NavBar from '@/components/sections/NavBar';
 import TechStack from '@/components/sections/TechStack';
+import NeuralNetworkSimulator from '@/components/sections/NeuralNetworkSimulator';
 import Footer from '@/components/sections/Footer';
 import SectionDivider from '@/components/ui/SectionDivider';
 
@@ -80,6 +81,12 @@ export default function AboutPage() {
 
         <div className="mt-12">
           <TechStack />
+        </div>
+
+        <SectionDivider />
+
+        <div className="mt-12">
+          <NeuralNetworkSimulator />
         </div>
 
         <SectionDivider />
